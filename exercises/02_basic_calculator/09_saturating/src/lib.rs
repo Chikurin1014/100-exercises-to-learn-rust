@@ -1,9 +1,12 @@
 pub fn factorial(n: u32) -> u32 {
-    let mut result = 1;
+    let mut result = 1u32;
     for i in 1..=n {
         // Use saturating multiplication to stop at the maximum value of u32
         // rather than overflowing and wrapping around
-        result *= i;
+
+        // MY_NOTE: In order to call method `saturating_mul`, the type of `result` must be defined explicitly when it is declaired
+        // MY_NOTE: `saturating_mul`を呼ぶためには`result`の型が宣言時に明示されている必要がある
+        result = result.saturating_mul(i);
     }
     result
 }

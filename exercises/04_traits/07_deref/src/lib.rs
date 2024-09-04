@@ -4,6 +4,7 @@
 //   find it in the documentation for `String`.
 //   Can you figure out where it is defined and how to use it?
 
+#[allow(dead_code)]
 pub struct Ticket {
     title: String,
     description: String,
@@ -12,11 +13,19 @@ pub struct Ticket {
 
 impl Ticket {
     pub fn title(&self) -> &str {
-        todo!()
+        // MY_NOTE: The `deref` method, which is declaired in std::ops::Deref and implemented in alloc::string is called implicitly
+        // MY_NOTE: The code is equivalent to:
+        // MY_NOTE: use std::ops::Deref;
+        // MY_NOTE: &self.title.deref().trim()
+        &self.title.trim()
     }
 
     pub fn description(&self) -> &str {
-        todo!()
+        // MY_NOTE: The `deref` method, which is declaired in std::ops::Deref and implemented in alloc::string is called implicitly
+        // MY_NOTE: The code is equivalent to:
+        // MY_NOTE: use std::ops::Deref;
+        // MY_NOTE: &self.title.deref().trim()
+        &self.description.trim()
     }
 }
 

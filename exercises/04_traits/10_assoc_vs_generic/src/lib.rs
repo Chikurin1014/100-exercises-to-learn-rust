@@ -13,6 +13,48 @@
 // You don't have to though: it's perfectly okay to write three separate
 // implementations manually. Venture further only if you're curious.
 
+// MY_NOTE: You can write like this where `Step` trait and `num` trait is available:
+// MY_NOTE: trait Power<Exp: std::iter::Step + num::traits::Zero> {
+// MY_NOTE:     fn power(self, exp: Exp) -> Self;
+// MY_NOTE: }
+// MY_NOTE: > You cannot (yet) implement Iterator for ranges over custom types,
+// MY_NOTE: > until Step (or some replacement API) is stabilised.
+// MY_NOTE: > cite: https://stackoverflow.com/questions/56986468/why-am-i-getting-an-error-about-a-missing-unstable-trait-stditerstep-whic
+#[allow(dead_code)]
+trait Power<Exp> {
+    fn power(self, exp: Exp) -> Self;
+}
+
+impl Power<u16> for u32 {
+    fn power(self, exp: u16) -> Self {
+        let mut power = 1;
+        for _ in 0..exp {
+            power *= self;
+        }
+        power
+    }
+}
+
+impl Power<u32> for u32 {
+    fn power(self, exp: u32) -> Self {
+        let mut power = 1;
+        for _ in 0..exp {
+            power *= self;
+        }
+        power
+    }
+}
+
+impl Power<&u32> for u32 {
+    fn power(self, exp: &u32) -> Self {
+        let mut power = 1;
+        for _ in 0..*exp {
+            power *= self;
+        }
+        power
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::Power;

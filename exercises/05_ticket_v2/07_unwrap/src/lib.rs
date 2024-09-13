@@ -1,8 +1,12 @@
 // TODO: `easy_ticket` should panic when the title is invalid.
 //   When the description is invalid, instead, it should use a default description:
 //   "Description not provided".
+#[allow(dead_code)]
 fn easy_ticket(title: String, description: String, status: Status) -> Ticket {
-    todo!()
+    let default_description = "Description not provided".to_string();
+    let res = Ticket::new(title.clone(), description.clone(), status.clone());
+    let default_res = Ticket::new(title, default_description, status);
+    res.or(default_res).unwrap()
 }
 
 #[derive(Debug, PartialEq, Clone)]
@@ -12,6 +16,7 @@ struct Ticket {
     status: Status,
 }
 
+#[allow(dead_code)]
 #[derive(Debug, PartialEq, Clone)]
 enum Status {
     ToDo,

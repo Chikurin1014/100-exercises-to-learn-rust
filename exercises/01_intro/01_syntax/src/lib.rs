@@ -3,7 +3,6 @@
 //  partner in this course and it'll often guide you in the right direction!
 //
 // The input parameters should have the same type of the return type.
-#[allow(dead_code)]
 fn compute(a: u32, b: u32) -> u32 {
     // Don't touch the function body.
     a + b * 2

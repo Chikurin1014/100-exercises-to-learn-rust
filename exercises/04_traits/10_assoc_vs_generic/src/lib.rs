@@ -20,7 +20,6 @@
 // MY_NOTE: > You cannot (yet) implement Iterator for ranges over custom types,
 // MY_NOTE: > until Step (or some replacement API) is stabilised.
 // MY_NOTE: > cite: https://stackoverflow.com/questions/56986468/why-am-i-getting-an-error-about-a-missing-unstable-trait-stditerstep-whic
-#[allow(dead_code)]
 trait Power<Exp> {
     fn power(self, exp: Exp) -> Self;
 }

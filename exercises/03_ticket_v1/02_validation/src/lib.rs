@@ -1,11 +1,9 @@
-#[allow(dead_code)]
 struct Ticket {
     title: String,
     description: String,
     status: String,
 }
 
-#[allow(dead_code)]
 impl Ticket {
     // TODO: implement the `new` function.
     //  The following requirements should be met:

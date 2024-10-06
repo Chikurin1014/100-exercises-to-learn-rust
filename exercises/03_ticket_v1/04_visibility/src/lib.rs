@@ -1,4 +1,3 @@
-#[allow(dead_code)]
 mod ticket {
     pub struct Ticket {
         title: String,
@@ -36,7 +35,6 @@ mod ticket {
 // TODO: **Exceptionally**, you'll be modifying both the `ticket` module and the `tests` module
 //  in this exercise.
 #[cfg(test)]
-#[allow(dead_code, unused_variables)]
 mod tests {
     // TODO: Add the necessary `pub` modifiers in the parent module to remove the compiler
     //  errors about the use statement below.

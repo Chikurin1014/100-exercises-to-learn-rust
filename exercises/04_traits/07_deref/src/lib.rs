@@ -4,7 +4,6 @@
 //   find it in the documentation for `String`.
 //   Can you figure out where it is defined and how to use it?
 
-#[allow(dead_code)]
 pub struct Ticket {
     title: String,
     description: String,

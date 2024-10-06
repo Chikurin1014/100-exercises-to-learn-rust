@@ -1,7 +1,6 @@
 // TODO: Convert the `Ticket::new` method to return a `Result` instead of panicking.
 //   Use `String` as the error type.
 
-#[allow(dead_code)]
 #[derive(Debug, PartialEq)]
 struct Ticket {
     title: String,
@@ -9,7 +8,6 @@ struct Ticket {
     status: Status,
 }
 
-#[allow(dead_code)]
 #[derive(Debug, PartialEq)]
 enum Status {
     ToDo,
@@ -17,7 +15,6 @@ enum Status {
     Done,
 }
 
-#[allow(dead_code)]
 impl Ticket {
     pub fn new(title: String, description: String, status: Status) -> Result<Ticket, String> {
         if title.is_empty() {

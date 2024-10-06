@@ -25,7 +25,6 @@ impl Display for TicketNewError {
 //   stored inside the relevant variant of the `TicketNewError` enum.
 //   When the description is invalid, instead, it should use a default description:
 //   "Description not provided".
-#[allow(dead_code)]
 fn easy_ticket(title: String, description: String, status: Status) -> Ticket {
     let res = Ticket::new(title.clone(), description, status.clone());
     match res {
@@ -45,7 +44,6 @@ struct Ticket {
     status: Status,
 }
 
-#[allow(dead_code)]
 #[derive(Debug, PartialEq, Clone)]
 enum Status {
     ToDo,

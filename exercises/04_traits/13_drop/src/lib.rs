@@ -27,7 +27,6 @@ impl Drop for DropBomb {
 mod tests {
     use super::*;
 
-    #[allow(unused_variables)]
     #[test]
     #[should_panic]
     fn test_drop_bomb() {

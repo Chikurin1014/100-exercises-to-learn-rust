@@ -18,7 +18,6 @@ enum Status {
     Done,
 }
 
-#[allow(dead_code)]
 impl Ticket {
     pub fn new(title: String, description: String, status: Status) -> Ticket {
         if title.is_empty() {

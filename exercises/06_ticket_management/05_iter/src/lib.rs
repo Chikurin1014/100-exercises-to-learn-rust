@@ -6,6 +6,13 @@ pub struct TicketStore {
     tickets: Vec<Ticket>,
 }
 
+impl std::ops::Deref for TicketStore {
+    type Target = [Ticket];
+    fn deref(&self) -> &Self::Target {
+        &self.tickets
+    }
+}
+
 #[derive(Debug, Clone, PartialEq)]
 pub struct Ticket {
     title: TicketTitle,

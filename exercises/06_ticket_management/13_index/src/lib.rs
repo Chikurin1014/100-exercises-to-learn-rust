@@ -32,6 +32,20 @@ pub enum Status {
     Done,
 }
 
+impl std::ops::Index<TicketId> for TicketStore {
+    type Output = Ticket;
+    fn index(&self, index: TicketId) -> &Self::Output {
+        &self.tickets[index.0 as usize]
+    }
+}
+
+impl std::ops::Index<&TicketId> for TicketStore {
+    type Output = Ticket;
+    fn index(&self, index: &TicketId) -> &Self::Output {
+        &self.tickets[index.0 as usize]
+    }
+}
+
 impl TicketStore {
     pub fn new() -> Self {
         Self {

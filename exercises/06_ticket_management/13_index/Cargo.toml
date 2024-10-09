@@ -5,3 +5,6 @@ edition = "2021"
 
 [dependencies]
 ticket_fields = { path = "../../../helpers/ticket_fields" }
+
+[lints]
+workspace = true

@@ -19,5 +19,5 @@ overflow-checks = false
 [workspace.lints.rust]
 dead_code = "allow"
 unused_variables = "allow"
-unused_function = "allow"
 unused_imports = "allow"
+unreachable_code = "allow"

@@ -75,6 +75,12 @@ impl Index<&TicketId> for TicketStore {
     }
 }
 
+impl std::ops::IndexMut<TicketId> for TicketStore {
+    fn index_mut(&mut self, index: TicketId) -> &mut Self::Output {
+        &mut self.tickets[index.0 as usize]
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use crate::{Status, TicketDraft, TicketStore};
